@@ -5,6 +5,7 @@ The Computer Science TAs Introduce
 This readme will introduce:
 	* What this project is, The overall goal of this project
 	* The innerworkings and how-to of the project
+	* How to add to the project
 	* The target audience of the project
 	* The current goal of the project
 
@@ -16,6 +17,11 @@ This readme will introduce:
 
 We will probably include a link to the hosted website.
 The files should include a index.html and a quick build tool/command line tool
+
+##How to add to the project
+
+To avoid merge issues please use your own branches alongside
+github pull requests to add changes to the project.
 
 ##How the project works
 
