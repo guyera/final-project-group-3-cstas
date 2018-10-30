@@ -3,11 +3,11 @@ The Computer Science TAs Introduce
 ## A Soon to Be named Project
 
 This readme will introduce:
-	* What this project is, The overall goal of this project
-	* The innerworkings and how-to of the project
-	* How to add to the project
-	* The target audience of the project
-	* The current goal of the project
+*	What this project is, The overall goal of this project
+*	The innerworkings and how-to of the project
+*	How to add to the project
+*	The target audience of the project
+*	The current goal of the project
 
 ## The Project Description
 
