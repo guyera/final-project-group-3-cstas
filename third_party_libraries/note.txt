@@ -1,0 +1,3 @@
+Note:
+Any content put in this folder will not be checked
+for changes nor committed automatically.
