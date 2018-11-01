@@ -20,10 +20,10 @@ The website will include:
 *   A Website Title
 *   A nav-list dictating months of the year
 *   A simple Main/Body which includes:
-*   *   A Form for indicating an event's details and an update button
-*   *   A flex-box object which displays the seven days of the week in collumns
-*   *   The Collumns should include colored blocks which dictate events
-*   *   The flex-box object should have rows dictating hours in the day
+   *   A Form for indicating an event's details and an update button
+   *   A flex-box object which displays the seven days of the week in collumns
+   *   The Collumns should include colored blocks which dictate events
+   *   The flex-box object should have rows dictating hours in the day
 *   A Footer which includes the Team members and CS290
 
 *CSS3 Styles*
@@ -79,14 +79,14 @@ github pull requests to add changes to the project.
 In shell/terminal navigate to location of git repository.
 git status        --> Reveals the current state of the repo
 
-*Make sure to pull before branching, as this will make merging easier*
-
-git branch          --> Lists the current branches within the local repo
-git branch -a       --> Lists remote branches as well
-git branch *name*   --> Creates a new branch of such name
-git checkout *name* --> Will checkout the branch *Note the name of the master branch*
-git branch -h       --> Reveals all erroneous commands for working with branches
-git checkout -h     --> Reveals all erroneous commands for checking out branches
+*Make sure to pull before branching, as this will make merging easier*  
+  
+git branch          --> Lists the current branches within the local repo  
+git branch -a       --> Lists remote branches as well  
+git branch *name*   --> Creates a new branch of such name  
+git checkout *name* --> Will checkout the branch *Note the name of the master branch*  
+git branch -h       --> Reveals all erroneous commands for working with branches  
+git checkout -h     --> Reveals all erroneous commands for checking out branches  
 
 [More on Branching]{https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging}
 
