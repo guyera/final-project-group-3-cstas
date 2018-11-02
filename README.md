@@ -35,7 +35,7 @@ ickyness.
 The forms should be controlled with client-side Javascript. The code on the client should control the format
 of the data sent to the server. This means that it designates the format of details for each event. The client
 should also have adequate warnings for incorrect inputs of information. The details of the forms and possible
-issues are posted [here]{#Calendar_Form}
+issues are posted [here](#Calendar_Form)
 
 The client side JS also has to create all the "div" objects that will be placed within the user's calendar. This
 information should be read from the server. This should occur on load within the browser.
@@ -53,11 +53,11 @@ information does not go with it.
 
 ## How to use My Calendar
 
-[link to website]{#}
+[link to website](#)
 
 The files should include a index.html and any other necessary process to set up the service
 
-##Calendar_Form
+## Calendar_Form
 The calendar form represents the Mogal the user inputs details about a new event to be created.
 At the bare minimum each event requires:
 *   A Name for the Event
@@ -88,7 +88,7 @@ git checkout *name* --> Will checkout the branch *Note the name of the master br
 git branch -h       --> Reveals all erroneous commands for working with branches  
 git checkout -h     --> Reveals all erroneous commands for checking out branches  
 
-[More on Branching]{https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging}
+[More on Branching](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 
 ## How the project works
 Check on ##Calendar_Form
