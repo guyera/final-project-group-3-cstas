@@ -43,7 +43,7 @@ app.listen(80, function(){
 	console.log("Server listening on port 80");
 	
 	//Serve static files in root web app directory
-	app.use(express.static('/'));
+	app.use(express.static(__dirname + '/public'));
 
 	app.get('/events', getEvents);
 });
