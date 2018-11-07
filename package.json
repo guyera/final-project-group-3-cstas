@@ -1,0 +1,28 @@
+{
+  "name": "cstas-final-server",
+  "version": "1.0.0",
+  "description": "Node.js backend for Group 3, CSTAs, final project for CS 290",
+  "main": "server.js",
+  "scripts": {
+    "test": "index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guyera/final-project-group-3-cstas.git"
+  },
+  "keywords": [
+    "server",
+    "backend",
+    "node.js",
+    "node"
+  ],
+  "author": "Group 3, CSTAs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guyera/final-project-group-3-cstas/issues"
+  },
+  "homepage": "https://github.com/guyera/final-project-group-3-cstas#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
