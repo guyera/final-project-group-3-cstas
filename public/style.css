@@ -86,6 +86,12 @@ main{
     width: 100%;
 }
 
+.button_housing{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+
 /* Day Lists Bar */
 .day-container{
     height: 40px;
