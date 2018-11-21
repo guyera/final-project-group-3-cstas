@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<!-- My Calendar Base HTML -->
+<html>
+    <head>
+        <!-- Scripts | Stylesheets | Metacode-->
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <header>
+        <!--Title for the site-->
+        <div class="bar header">
+            <h1>My Cloud Calendar</h1>
+        </div>
+    </header>
+    <main>
+        <!-- APP -->
+
+        <!-- Month List -->
+        <div class="bar month-container">
+            <ul class="uilist" id="monthlist">
+                <!--Possibly an @media to do full names of months -->
+                <li class="list-month"><span class="month">Jan</span></li>
+                <li class="list-month"><span class="month">Feb</span></li>
+                <li class="list-month"><span class="month">Mar</span></li>
+                <li class="list-month"><span class="month">Apr</span></li>
+                <li class="list-month"><span class="month">May</span></li>
+                <li class="list-month"><span class="month">Jun</span></li>
+                <li class="list-month"><span class="month">Jul</span></li>
+                <li class="list-month"><span class="month">Aug</span></li>
+                <li class="list-month"><span class="month">Sep</span></li>
+                <li class="list-month"><span class="month">Oct</span></li>
+                <li class="list-month"><span class="month">Nov</span></li>
+                <li class="list-month"><span class="month">Dec</span></li>
+            </ul>
+        </div>
+
+        <!-- Calendar Piece -->
+        <!-- This could be an aside if necessary-->
+        <div class="app container">
+            <div class="app inner-div" id="cloud-calendar-app">
+                <div class="bar day-container" id="daylist-container">
+                    <ul class="uilist" id="daylist">
+                        <li class= "list-day splitter" id="initial-split"><span class="day blank-day"></span></li>
+                        <li class="list-day mon"><span class="day mon">Mon</span></li>
+                        <li class= "list-day splitter"><span class="day blank-day"></span></li>
+                        <li class="list-day tue"><span class="day tue">Tue</span></li>
+                        <li class= "list-day splitter"><span class="day blank-day"></span></li>
+                        <li class="list-day wed"><span class="day wed">Wed</span></li>
+                        <li class= "list-day splitter"><span class="day blank-day"></span></li>
+                        <li class="list-day thu"><span class="day thu">Thu</span></li>
+                        <li class= "list-day splitter"><span class="day blank-day"></span></li>
+                        <li class="list-day fri"><span class="day fri">Fri</span></li>
+                        <li class= "list-day splitter"><span class="day blank-day"></span></li>
+                        <li class="list-day sat"><span class="day sat">Sat</span></li>
+                        <li class= "list-day splitter"><span class="day blank-day"></span></li>
+                        <li class="list-day sun"><span class="day sun">Sun</span></li>
+                    </ul>
+                </div>
+                <div class="columns" id="collumn-chart">
+                    <div class="times-container times col">
+                        <ul class="tiny times" id="time-list">
+                            <li><span class="time-text AM">12:00</span></li>
+                            <li><span class="time-text AM">01:00</span></li>
+                            <li><span class="time-text AM">02:00</span></li>
+                            <li><span class="time-text AM">03:00</span></li>
+                            <li><span class="time-text AM">04:00</span></li>
+                            <li><span class="time-text AM">05:00</span></li>
+                            <li><span class="time-text AM">06:00</span></li>
+                            <li><span class="time-text AM">07:00</span></li>
+                            <li><span class="time-text AM">08:00</span></li>
+                            <li><span class="time-text AM">09:00</span></li>
+                            <li><span class="time-text AM">10:00</span></li>
+                            <li><span class="time-text AM">11:00</span></li>
+                            <li><span class="time-text PM">12:00</span></li>
+                            <li><span class="time-text PM">01:00</span></li>
+                            <li><span class="time-text PM">02:00</span></li>
+                            <li><span class="time-text PM">03:00</span></li>
+                            <li><span class="time-text PM">04:00</span></li>
+                            <li><span class="time-text PM">05:00</span></li>
+                            <li><span class="time-text PM">06:00</span></li>
+                            <li><span class="time-text PM">07:00</span></li>
+                            <li><span class="time-text PM">08:00</span></li>
+                            <li><span class="time-text PM">09:00</span></li>
+                            <li><span class="time-text PM">10:00</span></li>
+                            <li><span class="time-text PM">11:00</span></li>
+                        </ul>
+                    </div>
+                    <div class="day-column mon col">
+                        
+                    </div>
+                    <div class="day-column tue col">
+
+                    </div>
+                    <div class="day-column wed col">
+
+                    </div>
+                    <div class="day-column thu col">
+
+                    </div>
+                    <div class="day-column fri col">
+
+                    </div>
+                    <div class="day-column sat col">
+
+                    </div>
+                    <div class="day-column sun col">
+
+                    </div>
+                    
+                </div>
+                <div class = "button_housing">
+                    <a href="#" class="prev_button">&laquo; Previous</a>  
+                    <label> Dates Go Here</label>
+                    <a href="#" class="next_button">Next &raquo;</a>
+                </div> 
+            </div>
+        </div>
+
+        
+        
+    </main>
+
+    <footer>
+        <span class="authors">Tristan Hilbert</span>
+        <span class="authors">Ryan Kennedy</span>
+        <span class="authors">Alexander Guyer</span>
+        <span class="authors">Tyler Titsworth</span>
+    </footer>
+
+</html>
