@@ -1,10 +1,10 @@
-/# Git ignore file for those things You Want to ignore #/
+# Git ignore file for those things You Want to ignore
 
-./third_party_libraries/**
 **/third_party_libraries/**
+./third_party_libraries/**
 
+
+#Attempt at ignoring node_modules
 **/node_modules/**
+./node_modules/**
 
-**/node_modules/*
-
-**/node_modules
