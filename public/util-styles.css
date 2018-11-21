@@ -1,0 +1,21 @@
+/*
+ * Tristan Hilbert
+ * 11/21/2018
+ * Utility Styles for 404 and other erroneous web-pages
+ */
+
+
+.single-headline-container{
+    display: flex;
+    max-width: 100%;
+    height: 1000px;
+
+    align-items: baseline;
+    justify-content: center;
+}
+
+.single-headline{
+    display: block;
+    font-size: 144px;
+    font-weight: 6;
+}
