@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<!-- My Calendar Base HTML -->
+<html>
+    <head>
+        <!-- Scripts | Stylesheets | Metacode-->
+        <link rel="stylesheet" href="/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.runtime.js" defer></script>
+
+    </head>
+
+    <header>
+        <!--Title for the site-->
+        <div class="bar header">
+            <h1>My Cloud Calendar</h1>
+        </div>
+    </header>
+    <main>
+        <!-- APP -->
+
+        <!-- Month List -->
+        <div class="bar month-container">
+            <ul class="uilist" id="monthlist">
+                <!--Possibly an @media to do full names of months -->
+                <li class="list-month"><span class="month">Jan</span></li>
+                <li class="list-month"><span class="month">Feb</span></li>
+                <li class="list-month"><span class="month">Mar</span></li>
+                <li class="list-month"><span class="month">Apr</span></li>
+                <li class="list-month"><span class="month">May</span></li>
+                <li class="list-month"><span class="month">Jun</span></li>
+                <li class="list-month"><span class="month">Jul</span></li>
+                <li class="list-month"><span class="month">Aug</span></li>
+                <li class="list-month"><span class="month">Sep</span></li>
+                <li class="list-month"><span class="month">Oct</span></li>
+                <li class="list-month"><span class="month">Nov</span></li>
+                <li class="list-month"><span class="month">Dec</span></li>
+            </ul>
+        </div>
+    </main>
+    
+    {{{body}}}
+
+    <footer>
+        <span class="authors">Tristan Hilbert</span>
+        <span class="authors">Ryan Kennedy</span>
+        <span class="authors">Alexander Guyer</span>
+        <span class="authors">Tyler Titsworth</span>
+    </footer>
+
+</html>

@@ -12,15 +12,14 @@
     align-items: center;
     justify-content: center;
 
-    min-width: 720px;
+    min-width: 960px;
     height: 120px;
-
     border-radius: 10px;
 }
 
 .header{
     background-color: #440a44;
-
+    min-width: 1000px;
     height: 120px;
 }
 
@@ -33,7 +32,10 @@
 /* Aside */
 
 /* Main */
-
+main{
+    min-width: 1000px;
+    background-color: #dccbf0;
+}
 /* Month Lists Bar */
 .month-container{
     Background-color: #5f2a5f;
@@ -47,8 +49,22 @@
 }
 
 .list-month{
-    display: inline;
+    display: inline-block;
+    margin: 0px 20px;
 }
+
+.month{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #e47637;
+    font-size: 16px;
+}
+
+.month:hover{
+    color: #FFFFFF;
+    cursor: pointer;
+    font-weight: bold;
+}
+
 
 /* End Month List Bar */
 
@@ -56,57 +72,142 @@
 
 .container{
     display: flex;
-    min-width: 720px;
+    min-width: 1000px;
     min-height: 1000px;
     max-width: 100%;
-    margin: 40px 20px;
-    padding: 5px 20px;
+    margin: 0px 20px;
+    padding: 0px;
 
     justify-content: center;
 }
 
 .inner-div{
-    /* display:flex; */
+    display: block;
     width: 100%;
-    align-items: stretch;
+}
+
+.button_housing{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
 }
 
 /* Day Lists Bar */
 .day-container{
     height: 40px;
 }
+
 .list-day{
-    display: inline;
+    display: inline-block;
+    width: 32px;
+}
+
+#daylist{
+    margin: 0px;
+    white-space: nowrap;
+    padding: 0px;
+}
+
+#initial-split{
+    width: 70px;
+    flex-shrink: 2;
+}
+
+.splitter{
+    white-space: nowrap;
+    content: "";
+    display: inline-flex;
+    height: 18px;
+    width: 63px;
 }
 /* Day Lists Bar End */
 
 /* Collumns */
+.columns{
+    display: flex;
+    justify-content: center;
+    padding: 0px 80px;
+}
 .col{
-    display: inline-block;
-    height: 400px;
-    width: 98px;
-    border: none;
-    margin: 0;
-    /*For Debuggin Purposes -- Please Remove */
-    background-color: #1355FF;
-    
+    display: inline-flex;
+    height: 800px;
+    width: 100px;
+
+    border: solid #5f2a5f;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-radius: 6px 6px;
+    margin: 0px 0px;
 }
 /* Collumns End */
 
 /* Times */
 .times-container{
     width: 6%;
+    
 }
 
-.times{
-    margin: 0;
-    padding: 0;
-    display: inline-block;
+.tiny{
+    flex-shrink: 2;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+.tiny li{
+    padding: 2.5px 0px;
+    margin: 9px 5px;
 }
 
 .time-text{
     display: inline-block;
+    font-size: 16px;
+    color: #e47637;
 }
+
+.AM::after{
+    content: "AM";
+}
+
+.PM::after{
+    content: "PM";
+}
+
+@media only screen and (max-width: 1350px){
+    .AM::after{
+        content: "";
+    }
+    
+    .PM::after{
+        content: "";
+    }
+
+    .container{
+        min-width: 800px;
+    }
+}
+
 /* Times End */
 
 /* Footer */
+
+.authors{
+    margin: 0px 10px;
+    font-family: fantasy;
+    color: #440a44;
+    font-size: 16px;
+    font-weight: 5;
+}
+
+html{
+    background-color: #dccbf0
+}
+
+footer::before{
+    content: "\A9  ";
+}
+
+/* Footer End */
+
