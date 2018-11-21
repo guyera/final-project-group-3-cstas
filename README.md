@@ -71,9 +71,11 @@ At the bare minimum each event requires:
 
 
 ## How to add to the project
-
 To avoid merge issues please use your own branches alongside
 github pull requests to add changes to the project.
+
+To install current node modules to work on local machine, use:
+npm install
 
 --*How-To*--
 In shell/terminal navigate to location of git repository.
