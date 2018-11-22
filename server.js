@@ -10,6 +10,7 @@ const handlebars = require('handlebars');
 const exphbs = require('express-handlebars');
 const app = express();
 
+
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 const url = 'mongodb://localhost:27017';
@@ -17,7 +18,6 @@ const dbName = 'webdevfinal';
 const client = new MongoClient(url);
 var db;
 var port = process.env.PORT || 80;
-
 
 // /*
 //  *
@@ -43,6 +43,12 @@ var port = process.env.PORT || 80;
 // 	res.json({});//For now, empty JSON object. TODO: implement function to gather objects from MongoDB.
 // };
 
+
+//Set up Tristan's weird Templating
+const context = require("./context.json");
+const custom_handles = require("./custom_handlebar.js");
+custom_handles.attach_custom_handles(handlebars);
+
 //Set up express
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
@@ -52,7 +58,7 @@ app.use(express.static('public'));
 
 //serve webpage, will need updating
 app.get("/calendar", function(req, res, next){
-    res.status(200).render('calendar', {});
+    res.status(200).render('calendar', {context});
 });
 app.get("*", function(req, res, next){
     res.status(404).render('404', {});
