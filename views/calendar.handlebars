@@ -24,16 +24,13 @@
                 <div class="columns" id="collumn-chart">
                     <div class="times-container times col">
                         <ul class="tiny times" id="time-list">
-                            {{#each time}}
-                                {{timeIndex time}}
-                            {{/each}}
+                        {{! Prints out the Time Collumn, Could become partial}}
+                        {{{timeIndex context.time}}}
                             
                         </ul>
                     </div>
                     {{! This will print out the Day Collumns}}
-                    {{#each day}}
-                        {{dayCol day @index}}
-                    {{/each}}
+                        {{{dayCol context.day}}}
                 </div>
                 <div class = "button_housing">
                     <a href="#" class="cycle-button prev_button">&laquo; Prev</a>  

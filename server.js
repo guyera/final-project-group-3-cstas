@@ -10,6 +10,7 @@ const handlebars = require('handlebars');
 const exphbs = require('express-handlebars');
 const app = express();
 
+
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 const url = 'mongodb://localhost:27017';
@@ -45,7 +46,8 @@ var port = process.env.PORT || 80;
 
 //Set up Tristan's weird Templating
 const context = require("./context.json");
-//require("./custom_handlebar.js").attach_custom_handles(handlebars);
+const custom_handles = require("./custom_handlebar.js");
+custom_handles.attach_custom_handles(handlebars);
 
 //Set up express
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
@@ -56,7 +58,7 @@ app.use(express.static('public'));
 
 //serve webpage, will need updating
 app.get("/calendar", function(req, res, next){
-    res.status(200).render('calendar', {});
+    res.status(200).render('calendar', {context});
 });
 app.get("*", function(req, res, next){
     res.status(404).render('404', {});
