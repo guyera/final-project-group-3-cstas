@@ -57,7 +57,7 @@ app.use(express.static('public'));
 
 
 //serve webpage, will need updating
-app.get("/calendar", function(req, res, next){
+app.get("/", function(req, res, next){
     res.status(200).render('calendar', {context});
 });
 app.get("*", function(req, res, next){
