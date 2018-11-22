@@ -24,54 +24,16 @@
                 <div class="columns" id="collumn-chart">
                     <div class="times-container times col">
                         <ul class="tiny times" id="time-list">
-                            <li><span class="time-text AM">12:00</span></li>
-                            <li><span class="time-text AM">01:00</span></li>
-                            <li><span class="time-text AM">02:00</span></li>
-                            <li><span class="time-text AM">03:00</span></li>
-                            <li><span class="time-text AM">04:00</span></li>
-                            <li><span class="time-text AM">05:00</span></li>
-                            <li><span class="time-text AM">06:00</span></li>
-                            <li><span class="time-text AM">07:00</span></li>
-                            <li><span class="time-text AM">08:00</span></li>
-                            <li><span class="time-text AM">09:00</span></li>
-                            <li><span class="time-text AM">10:00</span></li>
-                            <li><span class="time-text AM">11:00</span></li>
-                            <li><span class="time-text PM">12:00</span></li>
-                            <li><span class="time-text PM">01:00</span></li>
-                            <li><span class="time-text PM">02:00</span></li>
-                            <li><span class="time-text PM">03:00</span></li>
-                            <li><span class="time-text PM">04:00</span></li>
-                            <li><span class="time-text PM">05:00</span></li>
-                            <li><span class="time-text PM">06:00</span></li>
-                            <li><span class="time-text PM">07:00</span></li>
-                            <li><span class="time-text PM">08:00</span></li>
-                            <li><span class="time-text PM">09:00</span></li>
-                            <li><span class="time-text PM">10:00</span></li>
-                            <li><span class="time-text PM">11:00</span></li>
+                            {{#each time}}
+                                {{timeIndex time}}
+                            {{/each}}
+                            
                         </ul>
                     </div>
-                    <div class="day-column mon col">
-                        
-                    </div>
-                    <div class="day-column tue col">
-
-                    </div>
-                    <div class="day-column wed col">
-
-                    </div>
-                    <div class="day-column thu col">
-
-                    </div>
-                    <div class="day-column fri col">
-
-                    </div>
-                    <div class="day-column sat col">
-
-                    </div>
-                    <div class="day-column sun col">
-
-                    </div>
-                    
+                    {{! This will print out the Day Collumns}}
+                    {{#each day}}
+                        {{dayCol day @index}}
+                    {{/each}}
                 </div>
                 <div class = "button_housing">
                     <a href="#" class="cycle-button prev_button">&laquo; Prev</a>  

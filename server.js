@@ -18,7 +18,6 @@ const client = new MongoClient(url);
 var db;
 var port = process.env.PORT || 80;
 
-
 // /*
 //  *
 //  * Connect to Mongo DB
@@ -42,6 +41,11 @@ var port = process.env.PORT || 80;
 // function getEvents (req, res){
 // 	res.json({});//For now, empty JSON object. TODO: implement function to gather objects from MongoDB.
 // };
+
+
+//Set up Tristan's weird Templating
+const context = require("./context.json");
+//require("./custom_handlebar.js").attach_custom_handles(handlebars);
 
 //Set up express
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
