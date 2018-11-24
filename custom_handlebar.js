@@ -23,7 +23,13 @@ module.exports.getTimeIndex = function(args){
     return output;
 }
 
+
+
 module.exports.attach_custom_handles = function(handlebar){
     handlebar.registerHelper("timeIndex", module.exports.getTimeIndex);
     handlebar.registerHelper("dayCol", module.exports.getDayColumn);
+    handlebar.registerHelper("ifDay", function(day, check, out){
+        if(check[day]){return String(out);}
+        return "";
+    });
 }
