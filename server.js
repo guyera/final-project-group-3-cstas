@@ -4,6 +4,7 @@
  * Created on 11/7/2018 @ 1:46 am
  *
  */
+const bodyParser = require('body-parser');
 const times = require('./times.json');
 const express = require('express');
 const handlebars = require('handlebars');
@@ -47,7 +48,7 @@ custom_handles.attach_custom_handles(handlebars);
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 app.use(express.static('public'));
-
+app.use(bodyParser.json());
 
 //set up blocks
 var context = require("./context.json");
@@ -102,7 +103,58 @@ app.get("/", function(req, res, next){
     var week = Math.floor((now.getDate() + (date.getDay() == 0 ? 6 : (date.getDay() - 1)) - 1) / 7);
     renderCalendar(week, date.getFullYear(), date.getMonth(), res, next);
 });
+
 app.get("*", function(req, res, next){
     res.status(404).render('404', {});
 });
 
+//Response handler for event posts. As month, week, year, and time are all path parameters, the only body parameter
+//should be the name. Here's an example post:
+
+/*
+var request = new XMLHttpRequest();
+var requestUrl = '/event/' + someMonth + '/' + someDay + '/' + someYear + '/' + someTime;
+request.open('POST', requestUrl);
+var bodyObj = {
+	name: someName
+};
+var body = JSON.stringify(bodyObj);
+request.setRequestHeader({
+	'Content-Type': 'application/json'
+});
+request.addEventListener('load', function(event){
+	//Perhaps make an alert saying the post was successful after checking event.target.status == 200, or
+	//alert an error if the status is something else
+});
+request.send(body);
+
+//Simply replace someMonth, someDay, someYear, someTime, and someName with the actual user input in the modal when
+//asking the user what event they would like to create
+
+*/
+
+app.post('/event/:month/:day/:year/:time', function(req, res, next){
+	var month = req.params.month;
+	var day = req.params.day;
+	var year = req.params.year;
+	var time = req.params.time;
+	var time12Num = time;
+	var name = req.body.name;
+	var amPm;
+	if(time12Num >= 12){
+		amPm = 'PM';
+		if(time12Num > 12){
+			time12Num -= 12;
+		}
+	}else{
+		amPm = 'AM';
+		if(time12Num == 0)
+			time12Num = 12;
+	}
+	
+	var time12 = (time12Num < 10 ? '0' : '') + time12Num + ':00 ' + amPm;
+	
+	//Now update the database
+	db.collection('event').insertOne({'name': name, 'time': time, 'time12': time12, 'month': month, 'year': year, 'day': day});
+	res.status(200).send('Post added successfully');
+});
