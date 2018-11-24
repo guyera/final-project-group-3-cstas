@@ -44,8 +44,10 @@ var port = process.env.PORT || 80;
 // };
 
 
+
 //Set up Tristan's weird Templating
-const context = require("./context.json");
+var context = require("./context.json");
+
 const custom_handles = require("./custom_handlebar.js");
 custom_handles.attach_custom_handles(handlebars);
 
@@ -54,6 +56,11 @@ app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 app.use(express.static('public'));
 
+
+//set up blocks
+
+context["times"][0]["Mon"] = true;
+context["event"] = "*Event*";
 
 
 //serve webpage, will need updating

@@ -1,0 +1,9 @@
+{{#each day}}
+<div class="day-column {{this}} col">
+    {{#each ../times}}
+    <div class="grid-box {{../this}}" id="{{../this}}_{{this.time}}">
+        {{ifDay ../this this ../../event}}
+    </div>
+    {{/each}}
+</div>
+{{/each}}
