@@ -62,7 +62,7 @@ context["event"] = "*Event*";
 app.get("/:month/:week/:year", function(req, res, next){
     var event = require("./event.json");
     cal = new c.Calendar(1);
-    var week = parseInt(req.params.week)-1;
+    var week = parseInt(req.params.week);
     var year = parseInt(req.params.year);
     var month = parseInt(req.params.month);
     cal = cal.monthDays(year, month);
