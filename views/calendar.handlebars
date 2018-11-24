@@ -22,15 +22,10 @@
                     </ul>
                 </div>
                 <div class="columns" id="collumn-chart">
-                    <div class="times-container times col">
-                        <ul class="tiny times" id="time-list">
-                        {{! Prints out the Time Collumn, Could become partial}}
-                        {{{timeIndex context.time}}}
-                            
-                        </ul>
-                    </div>
+                    {{!time list}}
+                    {{> time_list context}}
                     {{! This will print out the Day Collumns}}
-                        {{{dayCol context.day}}}
+                    {{> day_grid context}}
                 </div>
                 <div class = "button_housing">
                     <a href="#" class="cycle-button prev_button">&laquo; Prev</a>  
