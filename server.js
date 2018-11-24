@@ -44,8 +44,6 @@ var port = process.env.PORT || 80;
 // };
 
 //Set up Tristan's weird Templating
-var context = require("./context.json");
-
 const custom_handles = require("./custom_handlebar.js");
 custom_handles.attach_custom_handles(handlebars);
 
@@ -66,37 +64,45 @@ app.get("/event/:month/:week/:year/:time", function(req, res, next){
     res.status(200).render('events', event_pass);
 });
 
-
-app.get("/:month/:week/:year", function(req, res, next){
+function renderCalendar(week, year, month, res, next){
     var event = require("./event.json");
     cal = new c.Calendar(1);
-    var week = parseInt(req.params.week);
-    var year = parseInt(req.params.year);
-    var month = parseInt(req.params.month);
     cal = cal.monthDays(year, month);
     if(cal.length > week){
+	var contextClone = JSON.parse(JSON.stringify(context));
         cal = cal[week];
         for(var j = 0; j < event.length; j++){
             if(event[j]["year"] == year && event[j]["month"] == month){
                 for(var i = 0; i < cal.length; i++){
                     if(cal[i] == event[j]["day"]){
-                        context["times"][event[j]["time"]][context["day"][i]] = true;
+                        contextClone["times"][event[j]["time"]][contextClone["day"][i]] = true;
                     }
                 }
             }
         }
-        res.status(200).render('calendar_app', {context});
+        res.status(200).render('calendar_app', {'context': contextClone});
     }
     else{
         console.log("bad");
         next();
     }
-    
+}
+
+app.get("/:month/:week/:year", function(req, res, next){
+    var week = parseInt(req.params.week);
+    var year = parseInt(req.params.year);
+    var month = parseInt(req.params.month);
+    renderCalendar(week, year, month, res, next);
 });
 
 //serve webpage, will need updating
 app.get("/", function(req, res, next){
-    res.status(200).render('calendar_app', {context});
+    //Get current month, week, and year, then render that page
+    var now = new Date();
+    var date = new Date(now.getFullYear(), now.getMonth(), 1);//Move to first of month
+    var week = Math.floor((now.getDate() + (date.getDay() == 0 ? 6 : (date.getDay() - 1)) - 1) / 7);
+    console.log('Week:', week, '\nYear:', now.getFullYear(), '\nMonth:', now.getMonth());
+    renderCalendar(week, date.getFullYear(), date.getMonth(), res, next);
 });
 app.get("*", function(req, res, next){
     res.status(404).render('404', {});
