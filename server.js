@@ -9,7 +9,7 @@ const express = require('express');
 const handlebars = require('handlebars');
 const exphbs = require('express-handlebars');
 const app = express();
-
+const c = require('calendar');
 
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
@@ -43,8 +43,6 @@ var port = process.env.PORT || 80;
 // 	res.json({});//For now, empty JSON object. TODO: implement function to gather objects from MongoDB.
 // };
 
-
-
 //Set up Tristan's weird Templating
 var context = require("./context.json");
 
@@ -58,14 +56,39 @@ app.use(express.static('public'));
 
 
 //set up blocks
-
-context["times"][0]["Mon"] = true;
+var context = require("./context.json");
 context["event"] = "*Event*";
 
+app.get("/:month/:week/:year", function(req, res, next){
+    var event = require("./event.json");
+    cal = new c.Calendar(1);
+    var week = parseInt(req.params.week)-1;
+    var year = parseInt(req.params.year);
+    var month = parseInt(req.params.month);
+    cal = cal.monthDays(year, month);
+    if(cal.length > week){
+        cal = cal[week];
+        for(var j = 0; j < event.length; j++){
+            if(event[j]["year"] == year && event[j]["month"] == month){
+                for(var i = 0; i < cal.length; i++){
+                    if(cal[i] == event[j]["day"]){
+                        context["times"][event[j]["time"]][context["day"][i]] = true;
+                    }
+                }
+            }
+        }
+        res.status(200).render('calendar_app', {context});
+    }
+    else{
+        console.log("bad");
+        next();
+    }
+    
+});
 
 //serve webpage, will need updating
 app.get("/", function(req, res, next){
-    res.status(200).render('calendar', {context});
+    res.status(200).render('calendar_app', {context});
 });
 app.get("*", function(req, res, next){
     res.status(404).render('404', {});
