@@ -24,6 +24,7 @@
   "homepage": "https://github.com/guyera/final-project-group-3-cstas#readme",
   "dependencies": {
     "assert": "^1.4.1",
+    "calendar": "^0.1.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
     "handlebars": "^4.0.12",
