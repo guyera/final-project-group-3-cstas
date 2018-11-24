@@ -4,7 +4,7 @@
  * Created on 11/7/2018 @ 1:46 am
  *
  */
-
+const times = require('./times.json');
 const express = require('express');
 const handlebars = require('handlebars');
 const exphbs = require('express-handlebars');
@@ -58,6 +58,14 @@ app.use(express.static('public'));
 //set up blocks
 var context = require("./context.json");
 context["event"] = "*Event*";
+
+app.get("/event/:month/:week/:year/:time", function(req, res, next){
+    //should search for event here
+    var event_pass = {};
+    event_pass['event'] = require("./event.json");
+    res.status(200).render('events', event_pass);
+});
+
 
 app.get("/:month/:week/:year", function(req, res, next){
     var event = require("./event.json");

@@ -2,14 +2,15 @@
     {
         "name": "birtday",
         "time": 7,
+        "time12": "07:00 AM",
         "month": 2,
         "year": 2017,
         "day": 1
     },
-
     {
         "name": "birtday2",
         "time": 13,
+        "time12": "01:00 PM",
         "month": 2,
         "year": 2017,
         "day": 5
